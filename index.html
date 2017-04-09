@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <title>Wait and Eat</title>
+    <!--Bootstrap latest compiled and minified CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!--Optional theme-->
+    <link rel="stylesheet" href="content/native/bootstrap-theme.min.css">
+    <!--Custom CSS-->
+	<ui-view name="stylesheets"></ui-view>
+
+</head>
+<body class="nav-md">
+
+  <div class="container body">
+    <div class="main_container">
+    <!--navbar directive that stays at the top of every page-->
+  	<ui-view name="content"></ui-view>
+    <!--Main content that changes based on route-->
+
+    <ui-view name="scripts"></ui-view>
+</body>
+
+    <!--Third-party JS-->
+    <script src="content/native/jquery.min.js"></script>
+    <script src="content/native/bootstrap.min.js"></script>
+    <script src="content/native/angular.min.js"></script>
+    <script src="content/native/angular-route.js"></script>
+	  <script src="content/native/angular-ui-router.min.js"></script>
+    <script src="content/native/ng-map.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router.statehelper/1.3.1/statehelper.min.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8m0K1LVm7IKgteIZVYSDiAt-LITlog-k"></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+
+    <script src="content/native/firebase.js"></script>
+    <script>
+        // Initialize Firebase. Use your own config values here. This is just a sample.
+        // You can copy and paste your config values by following the instructions at
+        // https://firebase.google.com/docs/web/setup#add_firebase_to_your_app.
+        var config = {
+			apiKey: "AIzaSyDgnK-GIWZodgi14t0bsVep-PPjbosVbuE",
+			authDomain: "wecare-1381.firebaseapp.com",
+			databaseURL: "https://wecare-1381.firebaseio.com",
+			storageBucket: "wecare-1381.appspot.com",
+			messagingSenderId: "984808067290"
+		  };
+		  firebase.initializeApp(config);
+    </script>
+    <script src="content/native/angularfire.min.js"></script>
+
+    <!--main app module-->
+    <script src="app/app.module.js"></script>
+
+    <!--auth module-->
+    <script src="app/auth/auth.module.js"></script>
+    <script src="app/auth/config.route.js"></script>
+    <script src="app/auth/auth.controller.js"></script>
+    <script src="app/auth/auth.service.js"></script>
+    <script src="app/auth/authForm.directive.js"></script>
+
+    <!--landing module-->
+    <script src="app/landing/landing.module.js"></script>
+    <script src="app/landing/config.route.js"></script>
+
+    <!--logIn module-->
+    <script src="app/logIn/logIn.module.js"></script>
+    <script src="app/logIn/config.route.js"></script>
+
+    <!--Search module-->
+    <script src="app/Search/Search.module.js"></script>
+    <script src="app/Search/config.route.js"></script>
+    <script src="app/Search/search.controller.js"></script>
+
+    <!--User module-->
+    <script src="app/User/User.module.js"></script>
+    <script src="app/User/config.route.js"></script>
+    <script src="app/User/User.controller.js"></script>
+
+    <!--Requests module-->
+    <script src="app/Requests/Requests.module.js"></script>
+    <script src="app/Requests/config.route.js"></script>
+    <script src="app/Requests/requests.controller.js"></script>
+
+    <!--Dashboard module-->
+    <script src="app/Dashboard/Dashboard.module.js"></script>
+    <script src="app/Dashboard/config.route.js"></script>
+    <script src="app/Dashboard/Dashboard.controller.js"></script>
+
+
+    <!--waitlist module-->
+    <script src="app/waitList/waitList.module.js"></script>
+    <script src="app/waitList/config.route.js"></script>
+    <script src="app/waitList/waitList.controller.js"></script>
+    <script src="app/waitList/directives/partyForm.directive.js"></script>
+    <script src="app/waitList/directives/partyTable.directive.js"></script>
+
+	<!--waitlist module-->
+    <script src="app/waitList1/waitList1.module.js"></script>
+    <script src="app/waitList1/config.route.js"></script>
+
+    <!--core module-->
+    <script src="app/core/core.module.js"></script>
+    <script src="app/core/constants.js"></script>
+    <script src="app/core/firebaseData.service.js"></script>
+    <script src="app/core/party.service.js"></script>
+    <script src="app/core/textMessage.service.js"></script>
+
+
+
+    <!--Templates module-->
+    <script src="app/Templates/Templates.module.js"></script>
+    <script src="app/Templates/header/Header.controller.js"></script>
+    <script src="app/Templates/sidebar/Sidebar.controller.js"></script>
+
+
+
+
+</html>

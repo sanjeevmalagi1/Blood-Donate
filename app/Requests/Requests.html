@@ -1,0 +1,124 @@
+
+<ui-view name="sidebar"></ui-view>
+<ui-view name="header"></ui-view>
+
+<div class="right_col" role="main" style="min-height: 452px;">
+
+    <div class="">
+          <div class="page-title">
+
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Track Your Requests</h2>
+
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+
+                  <div class="col-xs-12">
+                    <table class="data table table-striped no-margin">
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>Requested To</th>
+                                <th>Content Required</th>
+                                <th>Quantity</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="request in requests">
+                                <td>1</td>
+                                <td>Sanjeev Malagi</td>
+                                <td>{{ request.BloodContent }}</td>
+                                <td>{{ request.BloodQuantity }}ml</td>
+                                <td>{{ request.Status }}</td>
+                                <td>
+                                    <button class="btn btn-primary">Message</button>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" ng-click="userInfo(request.RespondedBy)">View User Info</button>
+                                    <button class="btn btn-primary">Cancel</button>
+                                </td>
+                              </tr>
+
+                            </tbody>
+                          </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">User Info</h4>
+        </div>
+        <div class="modal-body">
+         <div class="col-md-12 profile_left text-center">
+
+            <div class="profile_img">
+
+              <!-- end of image cropping -->
+              <div id="crop-avatar">
+                <!-- Current avatar -->
+                <div class="avatar-view" >
+                    <img src="{{ userData.ProfilePic }}" class="img-responsive">
+                  <img src="g" alt="Avatar">
+                </div>
+                <div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
+              </div>
+
+
+            </div>
+            <h3>{{ userData.Name }}</h3>
+
+            <ul class="list-unstyled user_data list-inline text-center">
+              <li class="verified-item verified-payment" data-qtsb-engagement="truei" data-qtsb-label="payment-unverified" data-toggle="tooltip" data-tooltip-size="large" data-tooltip-state="disabled" data-placement="top" data-original-title="Email Not verified">
+                <span class="Icon"><svg class="Icon-image" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M20.447 2.106c-.34-.17-.744-.133-1.047.095L16 4.75 12.6 2.2c-.355-.266-.844-.266-1.2 0L8 4.75 4.6 2.2c-.304-.227-.708-.264-1.047-.094C3.213 2.276 3 2.622 3 3v9c0 5.524 8.2 9.72 8.55 9.894l.45.227.45-.226C12.8 21.72 21 17.524 21 12V3c0-.378-.214-.724-.553-.894zM15 10h-3.5c-.275 0-.5.225-.5.5 0 .276.225.5.5.5h1c1.38 0 2.5 1.122 2.5 2.5 0 1.208-.86 2.22-2 2.45V17h-2v-1H9v-2h3.5c.276 0 .5-.224.5-.5 0-.275-.224-.5-.5-.5h-1C10.122 13 9 11.878 9 10.5c0-1.206.86-2.217 2-2.45V7h2v1h2v2z"></path></svg>
+                </span>
+              </li>
+              <li class="verified-item verified-payment" data-qtsb-engagement="truei" data-qtsb-label="payment-unverified" data-toggle="tooltip" data-tooltip-size="large" data-tooltip-state="disabled" data-placement="top" data-original-title="Phone Not Verified">
+                <span class="Icon"><svg class="Icon-image" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M20.447 2.106c-.34-.17-.744-.133-1.047.095L16 4.75 12.6 2.2c-.355-.266-.844-.266-1.2 0L8 4.75 4.6 2.2c-.304-.227-.708-.264-1.047-.094C3.213 2.276 3 2.622 3 3v9c0 5.524 8.2 9.72 8.55 9.894l.45.227.45-.226C12.8 21.72 21 17.524 21 12V3c0-.378-.214-.724-.553-.894zM15 10h-3.5c-.275 0-.5.225-.5.5 0 .276.225.5.5.5h1c1.38 0 2.5 1.122 2.5 2.5 0 1.208-.86 2.22-2 2.45V17h-2v-1H9v-2h3.5c.276 0 .5-.224.5-.5 0-.275-.224-.5-.5-.5h-1C10.122 13 9 11.878 9 10.5c0-1.206.86-2.217 2-2.45V7h2v1h2v2z"></path></svg>
+                </span>
+              </li>
+              <li class="verified-item verified-payment" data-qtsb-engagement="truei" data-qtsb-label="payment-unverified" data-toggle="tooltip" data-tooltip-size="large" data-tooltip-state="disabled" data-placement="top" data-original-title="Blood Group Not Verified">
+                  <span class="Icon">
+                      <svg class="Icon-image" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M15,21h5a1,1,0,0,0,1-1V16a1,1,0,0,0-1-1H16a1,1,0,0,0-1,1v1a6.91,6.91,0,0,1-7-7H9a1,1,0,0,0,1-1V5A1,1,0,0,0,9,4H5A1,1,0,0,0,4,5v5A11,11,0,0,0,15,21Z"></path>
+                </span>
+              </li>
+            </ul>
+        </div>
+        <div class="col-md-12">
+            <div class="">
+              <h3>Blood Group : {{ userData.Bloodgroup }}</h3>
+              <button class="btn btn-primary">Available</button>
+              <div class="well">
+                  I am ready only for special cases....okay dont disturb me
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+
+        </div>
+                  <div class="clearfix"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+</div>
